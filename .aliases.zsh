@@ -1,13 +1,12 @@
-alias :q='exit'
-
-alias hyprc="nvim ~/.config/hypr/"
-alias x='xplr'
-alias fucking='sudo'
+alias c='clear'
+alias t='touch'
 alias n='nvim'
-alias n.='nvim .'
-alias top='btop'
-alias svim='sudo nvim'
+alias :q='exit'
+alias s='sudo su -'
 alias lg='lazygit'
+
+alias svim='sudo nvim'
+alias top='btop'
 alias fzf='fzf --cycle'
 alias zshconf='nvim ~/.zshrc'
 alias sex='source ~/.zshrc && exec zsh'
@@ -15,10 +14,6 @@ alias sex='source ~/.zshrc && exec zsh'
 alias pacman='sudo pacman --color=auto'
 alias yay='yay --color=auto'
 
-alias s='sudo su -'
-alias shutdown='shutdown now'
-
-alias c='clear'
 alias ls='exa --icons -snew --group-directories-first'
 alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
 alias la='exa --long --git --icons -snew --group-directories-first -lahr'
@@ -36,7 +31,6 @@ alias sshstart='sudo systemctl start sshd'
 alias cpv='rsync -avh --info=progress2'
 alias tks='tmux kill-server'
 
-alias gc="git clone"
 alias gpm="git push -u origin main"
 
 alias gpp='g++'
@@ -46,7 +40,6 @@ alias pyserver='python3 -m http.server'
 alias usage='du -ch | grep total'
 
 # yt-dlp
-
 alias dlsong='yt-dlp --no-write-description --no-playlist --extract-audio --add-metadata --audio-format mp3'
 alias dlalbum='yt-dlp --no-write-description --yes-playlist --extract-audio --add-metadata -q --progress --audio-format mp3'
 alias yt-best='yt-dlp -f bestaudio+bestvideo'

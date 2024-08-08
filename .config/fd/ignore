@@ -44,3 +44,5 @@ node_modules
 go
 .BurpSuite
 .john
+CE-fork
+CE-main
