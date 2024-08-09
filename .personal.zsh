@@ -23,3 +23,7 @@ alias myip='curl ifconfig.me'
 alias rec="asciinema rec"
 
 alias initproject="git init && npm init -y && echo 'node_modules\npackage-lock.json' > .gitignore"
+
+ytmusic () {
+    mpv --no-audio-display $(yt-dlp --get-url --extract-audio "ytsearch:$*")
+}
