@@ -27,6 +27,7 @@ source ~/.aliases.zsh
 
 EDITOR="nvim"
 
+source <(portal completion zsh); compdef _portal portal
 source <(fzf --zsh)
 
 HISTFILE="$HOME/.zsh_history"

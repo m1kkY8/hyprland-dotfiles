@@ -4,6 +4,7 @@ alias n='nvim'
 alias :q='exit'
 alias s='sudo su -'
 alias lg='lazygit'
+alias ff='firefox'
 
 alias svim='sudo nvim'
 alias top='btop'
@@ -32,6 +33,7 @@ alias cpv='rsync -avh --info=progress2'
 alias tks='tmux kill-server'
 
 alias gpm="git push -u origin main"
+alias commit="git commit"
 
 alias gpp='g++'
 alias p='python3'
