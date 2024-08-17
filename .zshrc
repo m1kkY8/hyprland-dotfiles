@@ -13,11 +13,11 @@ export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
 plugins=(
-    fzf-tab
     zsh-autosuggestions 
     zsh-syntax-highlighting 
     rust 
     golang
+    fzf-tab
     )
 
 source $ZSH/oh-my-zsh.sh
@@ -28,15 +28,16 @@ source ~/.aliases.zsh
 EDITOR="nvim"
 
 source <(portal completion zsh); compdef _portal portal
-source <(fzf --zsh)
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
+zstyle ':completion:*:description' format '[%d]'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
 zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+source <(fzf --zsh)
