@@ -6,6 +6,8 @@ Games
 .gnupg
 .vim
 .git
+.docker
+.password-store
 .github
 IdeaProjects/*
 Pictures/*
