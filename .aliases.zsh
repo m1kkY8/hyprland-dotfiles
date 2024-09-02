@@ -1,6 +1,6 @@
 alias c='clear'
 alias t='touch'
-alias n='nvim'
+alias n='TERM=xterm-kitty nvim '
 alias :q='exit'
 alias s='sudo su -'
 alias lg='lazygit'
@@ -9,7 +9,16 @@ alias ff='firefox'
 alias svim='sudo nvim'
 alias top='btop'
 alias fzf='fzf --cycle'
-alias zshconf='nvim ~/.zshrc'
+
+alias zshrc='nvim ~/.zshrc'
+
+# git aliases
+alias gc='git clone'
+alias gst='git status'
+alias gpm="git push -u origin main"
+alias commit="meteor"
+
+
 alias sex='source ~/.zshrc && exec zsh'
 
 alias pacman='sudo pacman --color=auto'
@@ -22,18 +31,12 @@ alias gla='la | grep'
 alias cat='bat -pp'
 alias nf='fastfetch'
 
-alias pacs='sudo pacman -S'
-alias pacsyu='sudo pacman -Syu'
-alias pacrns='sudo pacman -Rns'
-alias search='sudo pacman -Ss | grep'
 alias sfile='grep -Rnw . -e'
 alias sshstart='sudo systemctl start sshd'
 
 alias cpv='rsync -avh --info=progress2'
 alias tks='tmux kill-server'
 
-alias gpm="git push -u origin main"
-alias commit="meteor"
 
 alias gpp='g++'
 alias p='python3'
@@ -47,16 +50,3 @@ alias dlalbum='yt-dlp --no-write-description --yes-playlist --extract-audio --ad
 alias yt-best='yt-dlp -f bestaudio+bestvideo'
 
 alias cdd='cd $(fd -H . "$HOME" --type d | fzf --info=inline-right --reverse --preview "tree -C {}")'
-alias rmm='find | fzf --reverse --multi --cycle --info=inline-right | xargs -I {} rm -rf {}'
-
-function vimf(){
-    selected=$(fd -H --type f --type l --exclude=Pictures --exclude=Music \
-        | fzf --cycle --info=inline-right --reverse --preview \
-        "bat -pp --color=always {}" --preview-window=right,65%)
-
-    if [[ -z $selected ]]; then
-        return 0;
-    else
-        nvim $selected
-    fi
-}

@@ -28,7 +28,12 @@ alias corpo="curl https://corporatebs-generator.sameerkumar.website/ -s | jq .ph
 alias free-game='curl https://www.freetogame.com/api/games\?platform\=pc -s | jq -r ".[].title" > free_games'
 
 alias lyrics="node ~/projects/tests/lyrics/index.mjs"
+alias srecko="~/projects/tests/reboot-srecko.sh"
+alias cleares="rm ~/.local/share/tmux/resurrect -rf" 
+alias lsres="ls ~/.local/share/tmux/resurrect" 
 
-ytmusic () {
+function ytmusic () {
     mpv --no-audio-display $(yt-dlp --get-url --extract-audio "ytsearch:$*")
 }
+
+

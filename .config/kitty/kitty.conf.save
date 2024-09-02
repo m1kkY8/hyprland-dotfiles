@@ -14,17 +14,12 @@ enable_audio_bell no
 confirm_os_windows_close 0
 confirm_os_window_close 0
 
-shell_integration enable no-cursor
-
 input_delay 0
 repaint_delay 2
 sync_to_monitor no
 wayland_enable_ime no
 
-cursor_shape beam
-cursor_shape_unfocused unchanged 
-
-focus_follows_mouse yes
+cursor_shape underline 
 
 action_alias launch_tab launch --type=tab --cwd=current
 
