@@ -7,7 +7,7 @@ fi
 
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:$HOME/.cargo/bin
-export BROWSER=brave
+export BROWSER=firefox
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
