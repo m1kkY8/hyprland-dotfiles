@@ -24,14 +24,15 @@ alias sex='source ~/.zshrc && exec zsh'
 alias pacman='sudo pacman --color=auto'
 alias yay='yay --color=auto'
 
+alias l='exa -1 --icons -snew --group-directories-first'
 alias ls='exa --icons -snew --group-directories-first'
 alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
 alias la='exa --long --git --icons -snew --group-directories-first -lahr'
 alias gla='la | grep'
-alias cat='bat -pp'
+alias cat='bat -pp --theme="Catppuccin Mocha"'
 alias nf='fastfetch'
 
-alias sfile='grep -Rnw . -e'
+alias sfile='grep --color=auto -Rnw . -e'
 alias sshstart='sudo systemctl start sshd'
 
 alias cpv='rsync -avh --info=progress2'

@@ -36,4 +36,4 @@ function ytmusic () {
     mpv --no-audio-display $(yt-dlp --get-url --extract-audio "ytsearch:$*")
 }
 
-
+alias combat='cd "/home/tox/projects/CombatExtended/ModPatches/RH2 Faction - Militaires Sans Frontieres"'
