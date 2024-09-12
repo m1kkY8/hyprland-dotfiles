@@ -53,7 +53,8 @@ EDITOR="nvim"
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000
 SAVEHIST=10000
-setopt appendhistory
+setopt append_history
+setopt SHARE_HISTORY
 
 zstyle ':completion:*:description' format '[%d]'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
