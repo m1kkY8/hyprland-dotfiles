@@ -1,4 +1,46 @@
-### Added by Zinit's installer
+# -----------------
+# Env vars
+# -----------------
+export PATH=$PATH:$(go env GOPATH)/bin
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$HOME/.local/bin:$PATH
+
+export PNPM_HOME="/home/tox/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+EDITOR="nvim"
+
+# -----------------
+# History
+# -----------------
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000
+SAVEHIST=10000
+setopt SHARE_HISTORY
+setopt APPEND_HISTORY
+setopt INC_APPEND_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST 
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+
+# -----------------
+# Opts
+# -----------------
+setopt AUTO_CD
+setopt NO_CASE_GLOB
+
+# -----------------
+# Zoxide
+# -----------------
+eval "$(zoxide init zsh)"
+
+# -----------------
+# Zinit Plugin manager
+# -----------------
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -19,60 +61,37 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
-### End of Zinit's installer chunk
-#
-#
-# Prompt
-#bindkey -v
-PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
-
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:$HOME/.cargo/bin
-setopt AUTO_CD
-
-#eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
 
 autoload -U +X compinit && compinit
 
-# Plugins
+# -----------------
+# Zinit plugins
+# -----------------
+
 zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-
-# Vim mode
-
-# Only changing the escape key to `jk` in insert mode, we still
-# keep using the default keybindings `^[` in other modes
-
 zinit light Aloxaf/fzf-tab
 zinit light zdharma-continuum/fast-syntax-highlighting
 zinit light zsh-users/zsh-autosuggestions
 
-EDITOR="nvim"
-
-HISTFILE="$HOME/.zsh_history"
-HISTSIZE=10000
-SAVEHIST=10000
-setopt append_history
-setopt SHARE_HISTORY
-
-zstyle ':completion:*:description' format '[%d]'
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
-zstyle ':fzf-tab:complete:cd:*' popup-pad 30 0
-
+# -----------------
+# FZF
+# -----------------
 source <(fzf --zsh)
 
-source ~/.personal.zsh
+zstyle ':completion:*:git-checkout:*' sort false
+zstyle ':completion:*:descriptions' format '[%d]'
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+zstyle ':fzf-tab:*' switch-group '<' '>'
+
+# -----------------
+# Personal stuff (recommended to remove)
+# -----------------
 source ~/.aliases.zsh
+source ~/.personal.zsh
 
-
-# pnpm
-export PNPM_HOME="/home/tox/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#
+# -----------------
+# Propmt
+# -----------------
 eval "$(starship init zsh)"
-export PATH=$HOME/.local/bin:$PATH
