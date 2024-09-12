@@ -1,53 +1,76 @@
+alias sex='source ~/.zshrc && exec zsh'
+
+# ---------------------------
+# Single Letter QoL
+# ---------------------------
 alias c='clear'
 alias t='touch'
-alias n='TERM=xterm-kitty nvim '
+alias n='nvim '
 alias :q='exit'
 alias s='sudo su -'
 alias lg='lazygit'
 alias ff='firefox'
 
+# ---------------------------
+# Configs
+# ---------------------------
+alias zshrc='nvim ~/.zshrc'
+alias aliases='nvim ~/.aliases.zsh'
+alias nvimrc='cd ~/.config/nvim && nvim'
+alias hyprc="cd ~/.config/hypr/ && nvim"
+
+# ---------------------------
+# System commands
+# ---------------------------
+alias yay='yay --color=auto'
+alias pacman='sudo pacman --color=auto'
+
+alias grep='grep --color=auto'
+alias ip='ip --color'
+alias myip='curl ifconfig.me'
 alias svim='sudo nvim'
 alias top='btop'
-alias fzf='fzf --cycle'
 
-alias zshrc='nvim ~/.zshrc'
-
-# git aliases
+# ---------------------------
+# Git 
+# ---------------------------
+alias initproject="git init && npm init -y && echo 'node_modules\npackage-lock.json' > .gitignore"
 alias gc='git clone'
 alias gst='git status'
 alias gpm="git push -u origin main"
 alias commit="meteor"
 
-
-alias sex='source ~/.zshrc && exec zsh'
-
-alias pacman='sudo pacman --color=auto'
-alias yay='yay --color=auto'
-
+# ---------------------------
+# Files
+# ---------------------------
 alias l='exa -1 --icons -snew --group-directories-first'
 alias ls='exa --icons -snew --group-directories-first'
 alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
 alias la='exa --long --git --icons -snew --group-directories-first -lahr'
 alias gla='la | grep'
+alias fzf='fzf --cycle'
 alias cat='bat -pp --theme="Catppuccin Mocha"'
-alias nf='fastfetch'
-
 alias sfile='grep --color=auto -Rnw . -e'
-alias sshstart='sudo systemctl start sshd'
-
-alias cpv='rsync -avh --info=progress2'
-alias tks='tmux kill-server'
-
-
-alias gpp='g++'
-alias p='python3'
-alias pyserver='python3 -m http.server'
-
 alias usage='du -ch | grep total'
 
+# ---------------------------
+# Misc
+# ---------------------------
+alias combat='cd "/home/tox/projects/CombatExtended/ModPatches/RH2 Faction - Militaires Sans Frontieres"'
+alias pyserver='python3 -m http.server'
+alias gpp='g++'
+alias p='python3'
+
+# ---------------------------
+# Tmux
+# ---------------------------
+alias tks='tmux kill-server'
+alias cleares="rm ~/.local/share/tmux/resurrect -rf" 
+alias lsres="ls ~/.local/share/tmux/resurrect" 
+
+# ---------------------------
 # yt-dlp
+# ---------------------------
 alias dlsong='yt-dlp --no-write-description --no-playlist --extract-audio --add-metadata --audio-format mp3'
 alias dlalbum='yt-dlp --no-write-description --yes-playlist --extract-audio --add-metadata -q --progress --audio-format mp3'
 alias yt-best='yt-dlp -f bestaudio+bestvideo'
-
-alias cdd='cd $(fd -H . "$HOME" --type d | fzf --info=inline-right --reverse --preview "tree -C {}")'

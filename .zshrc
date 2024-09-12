@@ -88,8 +88,14 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 # -----------------
 # Personal stuff (recommended to remove)
 # -----------------
-source ~/.aliases.zsh
-source ~/.personal.zsh
+
+if [[ -f "$HOME/.aliases.zsh" ]]; then
+  source "$HOME/.aliases.zsh"
+fi
+
+if [[ -f "$HOME/.personal.zsh" ]]; then
+  source "$HOME/.personal.zsh"
+fi
 
 # -----------------
 # Propmt
