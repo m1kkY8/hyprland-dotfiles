@@ -18,6 +18,8 @@ alias zshrc='nvim ~/.zshrc'
 alias aliases='nvim ~/.aliases.zsh'
 alias nvimrc='cd ~/.config/nvim && nvim'
 alias hyprc="cd ~/.config/hypr/ && nvim"
+alias keyrc='nvim ~/dotfiles/keys.conf'
+alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ keyboard.conf && sudo systemctl restart keyd'
 
 # ---------------------------
 # System commands
@@ -60,6 +62,11 @@ alias combat='cd "/home/tox/projects/CombatExtended/ModPatches/RH2 Faction - Mil
 alias pyserver='python3 -m http.server'
 alias gpp='g++'
 alias p='python3'
+kitty-reload() {
+    kill -SIGUSR1 $(pidof kitty)
+}
+
+alias rec='asciinema rec'
 
 # ---------------------------
 # Tmux
