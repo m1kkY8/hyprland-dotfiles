@@ -45,8 +45,7 @@ alias commit="meteor"
 # ---------------------------
 # Files
 # ---------------------------
-alias l='exa -1 --icons -snew --group-directories-first'
-alias ls='exa --icons -snew --group-directories-first'
+alias ls='exa -1 --icons -snew --group-directories-first'
 alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
 alias la='exa --long --git --icons -snew --group-directories-first -lahr'
 alias gla='la | grep'
