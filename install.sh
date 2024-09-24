@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
 
+# This script is intended to be run by regular user with sudo privileges.
+# Run on a fresh Arch installation
+
 # Function to install packages from the list
+install_yay() {
+  # Check if yay is installed
+  if ! command -v yay &>/dev/null; then
+    echo "yay not found. Installing yay..."
+    git clone https://aur.archlinux.org/yay.git
+    cd yay || exit
+    makepkg -si --noconfirm
+    cd ..
+    rm -rf yay
+  else
+    echo "yay is already installed."
+  fi
+}
+
 install_packages() {
   if [[ -f packages ]]; then
     echo "Installing packages from 'packages' file..."
@@ -63,6 +80,7 @@ install_tmux_plugin_manager() {
 }
 # Main execution
 main() {
+  install_yay
   install_packages
   clone_dotfiles
   manage_dotfiles
@@ -72,4 +90,10 @@ main() {
   install_tmux_plugin_manager
 }
 
-main
+# Check if the OS is Arch Linux
+if [[ -f /etc/arch-release ]]; then
+  main
+else
+  echo "This script is intended for Arch Linux only."
+  exit 1
+fi

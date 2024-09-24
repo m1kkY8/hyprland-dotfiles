@@ -5,3 +5,4 @@ packages
 .gitignore
 keys.conf
 push.sh
+assets
