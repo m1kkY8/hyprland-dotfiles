@@ -57,6 +57,10 @@ enable_sddm() {
   sudo systemctl start sddm
 }
 
+install_tmux_plugin_manager() {
+  echo "Installing tmux plugin manager..."
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+}
 # Main execution
 main() {
   install_packages
@@ -65,6 +69,7 @@ main() {
   setup_keyd
   setup_docker
   enable_sddm
+  install_tmux_plugin_manager
 }
 
 main
