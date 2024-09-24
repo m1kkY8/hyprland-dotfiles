@@ -1,10 +1,9 @@
-import = ["~/.config/alacritty/theme.toml"]
-#import = ["~/.config/alacritty/tokyo.toml"]
+import = ["~/.config/alacritty/flat.toml"]
 
 [cursor.style]
-    shape = "Beam"
+    shape = "Block"
 [cursor.vi_mode_style]
-    shape = "Beam"
+    shape = "Block"
 
 [env]
 TERM = "xterm-256color"

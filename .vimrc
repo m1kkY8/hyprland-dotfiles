@@ -8,5 +8,5 @@ set shiftwidth=2
 set expandtab
 
 nnoremap <silent> <space><space> :Ex<CR>
-inoremap jk <esc>
+inoremap jf <esc>
 nnoremap ; :
