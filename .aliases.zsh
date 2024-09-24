@@ -20,6 +20,7 @@ alias nvimrc='cd ~/.config/nvim && nvim'
 alias hyprc="cd ~/.config/hypr/ && nvim"
 alias keyrc='nvim ~/dotfiles/keys.conf'
 alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ keyboard.conf && sudo systemctl restart keyd'
+alias pdot='~/dotfiles/push.sh'
 
 # ---------------------------
 # System commands
@@ -50,7 +51,7 @@ alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
 alias la='exa --long --git --icons -snew --group-directories-first -lahr'
 alias gla='la | grep'
 alias fzf='fzf --cycle'
-alias cat='bat -pp --theme="Catppuccin Mocha"'
+alias cat='bat -pp '
 alias sfile='grep --color=auto -Rnw . -e'
 alias usage='du -ch | grep total'
 

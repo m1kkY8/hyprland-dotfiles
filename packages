@@ -4,7 +4,12 @@ bat
 clang
 cmake
 dua-cli
+docker
+zsh
+starship
+zoxide
 duf
+btop
 exa
 fd
 fzf
@@ -37,3 +42,4 @@ yt-dlp
 wl-clipboard
 qt6-wayland
 qt5-wayland
+keyd
