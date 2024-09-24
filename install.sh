@@ -51,6 +51,12 @@ setup_docker() {
   sudo systemctl start docker
 }
 
+enable_sddm() {
+  echo "Enabling and starting sddm service..."
+  sudo systemctl enable sddm
+  sudo systemctl start sddm
+}
+
 # Main execution
 main() {
   install_packages
@@ -58,6 +64,7 @@ main() {
   manage_dotfiles
   setup_keyd
   setup_docker
+  enable_sddm
 }
 
 main

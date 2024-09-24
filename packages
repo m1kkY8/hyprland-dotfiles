@@ -43,3 +43,6 @@ wl-clipboard
 qt6-wayland
 qt5-wayland
 keyd
+sddm
+pipewire
+wireplumber
