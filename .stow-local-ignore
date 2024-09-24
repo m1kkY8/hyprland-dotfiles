@@ -3,3 +3,5 @@ README.md
 install.sh
 packages
 .gitignore
+keys.conf
+push.sh

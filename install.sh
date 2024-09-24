@@ -25,12 +25,12 @@ clone_dotfiles() {
 
 # Function to run stow for dotfile management
 manage_dotfiles() {
-  if [[ -d "$HOME/.dotfiles" ]]; then
-    cd "$HOME/.dotfiles" || exit
+  if [[ -d "$HOME/dotfiles" ]]; then
+    cd "$HOME/dotfiles" || exit
     echo "Running stow to manage dotfiles..."
     stow . --adopt
   else
-    echo "Dotfiles directory not found at '$HOME/.dotfiles'. Please ensure your dotfiles are correctly cloned."
+    echo "Dotfiles directory not found at '$HOME/dotfiles'. Please ensure your dotfiles are correctly cloned."
     exit 1
   fi
 }
