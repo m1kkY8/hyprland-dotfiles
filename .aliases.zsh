@@ -67,6 +67,7 @@ kitty-reload() {
 }
 
 alias rec='asciinema rec'
+alias nf='fastfetch'
 
 # ---------------------------
 # Tmux
