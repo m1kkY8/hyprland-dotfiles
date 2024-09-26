@@ -1,4 +1,4 @@
-import = ["~/.config/alacritty/flat.toml"]
+import = ["~/.config/alacritty/cyber.toml"]
 
 [cursor.style]
     shape = "Block"
