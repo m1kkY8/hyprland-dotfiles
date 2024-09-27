@@ -8,7 +8,6 @@ alias t='touch'
 alias n='nvim '
 alias :q='exit'
 alias s='sudo su -'
-alias lg='lazygit'
 alias ff='firefox'
 
 # ---------------------------
@@ -20,7 +19,8 @@ alias nvimrc='cd ~/.config/nvim && nvim'
 alias hyprc="cd ~/.config/hypr/ && nvim"
 alias keyrc='nvim ~/dotfiles/keys.conf'
 alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ keyboard.conf && sudo systemctl restart keyd'
-alias pdot='~/dotfiles/push.sh'
+alias pdot='cd ~/dotfiles/ && bash push.sh'
+alias reload-waybar='pkill waybar && hyprctl dispatch exec waybar'
 
 # ---------------------------
 # System commands
@@ -56,12 +56,19 @@ alias sfile='grep --color=auto -Rnw . -e'
 alias usage='du -ch | grep total'
 
 # ---------------------------
-# Misc
+# Dev 
 # ---------------------------
-alias combat='cd "/home/tox/projects/CombatExtended/ModPatches/RH2 Faction - Militaires Sans Frontieres"'
+
 alias pyserver='python3 -m http.server'
 alias gpp='g++'
 alias p='python3'
+alias lzd='lazydocker'
+alias lg='lazygit'
+
+
+# ---------------------------
+# Misc
+# ---------------------------
 kitty-reload() {
     kill -SIGUSR1 $(pidof kitty)
 }
