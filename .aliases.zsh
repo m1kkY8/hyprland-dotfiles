@@ -27,6 +27,7 @@ alias reload-waybar='pkill waybar && hyprctl dispatch exec waybar'
 # ---------------------------
 alias yay='yay --color=auto'
 alias pacman='sudo pacman --color=auto'
+alias reboot='sudo reboot now'
 
 alias grep='grep --color=auto'
 alias ip='ip --color'
