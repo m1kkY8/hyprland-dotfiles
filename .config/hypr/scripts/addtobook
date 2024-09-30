@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Get the highlighted text
+highlighted_text=$(wl-paste --primary)
+
+# Define the bookmarks file
+bookmarks_file="$HOME/dotfiles/.local/share/bookmarks/marks"
+
+if grep -q "^$highlighted_text$" "$bookmarks_file"; then
+  notify-send "Bookmark already exists" "$highlighted_text"
+else
+  notify-send "Bookmark added" "$highlighted_text"
+  echo "$highlighted_text" >>"$bookmarks_file"
+fi

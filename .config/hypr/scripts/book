@@ -1,0 +1,6 @@
+#!/bin/bash
+
+marks="$HOME/dotfiles/.local/share/bookmarks/marks"
+
+selection=$(cat $marks | rofi -dmenu -matching fuzzy)
+[ -n "$selection" ] && echo "$selection" | wl-copy

@@ -21,7 +21,7 @@ install_yay() {
 install_packages() {
   if [[ -f packages ]]; then
     echo "Installing packages from 'packages' file..."
-    yay -S --noconfirm - <packages
+    yay -S - <packages
   else
     echo "'packages' file not found. Please ensure it's in the same directory."
     exit 1

@@ -22,6 +22,7 @@ alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ key
 alias pdot='cd ~/dotfiles/ && bash push.sh'
 alias reload-waybar='pkill waybar && hyprctl dispatch exec waybar'
 
+alias marks="n ~/dotfiles/.local/share/bookmarks/marks"
 # ---------------------------
 # System commands
 # ---------------------------
@@ -32,8 +33,9 @@ alias reboot='sudo reboot now'
 alias grep='grep --color=auto'
 alias ip='ip --color'
 alias myip='curl ifconfig.me'
-alias svim='sudo nvim'
+alias svim='sudo vim'
 alias top='btop'
+alias zed='zeditor'
 
 # ---------------------------
 # Git 
