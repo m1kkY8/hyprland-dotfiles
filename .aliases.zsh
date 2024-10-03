@@ -11,6 +11,11 @@ alias s='sudo su -'
 alias ff='firefox'
 
 # ---------------------------
+# Pentest
+# ---------------------------
+alias hosts='sudo vim /etc/hosts'
+
+# ---------------------------
 # Configs
 # ---------------------------
 alias zshrc='nvim ~/.zshrc'
