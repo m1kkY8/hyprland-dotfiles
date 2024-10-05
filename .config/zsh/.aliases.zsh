@@ -1,4 +1,4 @@
-alias sex='source ~/.zshrc && exec zsh'
+alias sex='source $ZDOTDIR/.zshrc && exec zsh'
 
 # ---------------------------
 # Single Letter QoL
@@ -18,8 +18,8 @@ alias hosts='sudo vim /etc/hosts'
 # ---------------------------
 # Configs
 # ---------------------------
-alias zshrc='nvim ~/.zshrc'
-alias aliases='nvim ~/.aliases.zsh'
+alias zshrc='nvim $ZDOTDIR/.zshrc'
+alias aliases='nvim $ZDOTDIR/.aliases.zsh'
 alias nvimrc='cd ~/.config/nvim && nvim'
 alias hyprc="cd ~/.config/hypr/ && nvim"
 alias keyrc='nvim ~/dotfiles/keys.conf'

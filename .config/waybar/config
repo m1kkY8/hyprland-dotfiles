@@ -5,7 +5,7 @@
     // "width": 1280, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces","pulseaudio", "backlight" ],
+    "modules-left": ["hyprland/workspaces","pulseaudio", "backlight", "custom/vpn"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["hyprland/submap", "hyprland/language", "cpu", "memory", "temperature", "battery", "tray", "clock"],
     // Modules configuration
@@ -35,6 +35,12 @@
     "hyprland/window": {
         "max-length": 50,
         "separate-outputs": true
+    },
+
+    "custom/vpn": {
+    "format": "{output}",
+    "exec": "~/.config/waybar/scripts/vpn.sh",
+    "interval": 10
     },
     "hyprland/language": {
         "format": "{}",
