@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Get the highlighted text
-highlighted_text=$(wl-paste --primary)
+highlighted_text=$(wl-paste -p)
 
 # Define the bookmarks file
 bookmarks_file="$HOME/dotfiles/.local/share/bookmarks/marks"

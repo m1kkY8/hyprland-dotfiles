@@ -11,10 +11,10 @@
   "cursor_shape": "block",
   "ui_font_size": 20,
   "buffer_font_size": 24,
-  "buffer_font_family": "Iosevka Nerd Font",
+  "buffer_font_family": "IosevkaTerm Nerd Font",
   "theme": {
     "mode": "system",
-    "light": "Tokyo Night",
+    "light": "Kubesong",
     "dark": "One Dark"
   },
   "tabs": {

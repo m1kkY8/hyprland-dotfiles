@@ -9,11 +9,12 @@ import = ["~/.config/alacritty/flat.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 22
 
 [font.normal]
-family = "Iosevka Nerd Font"
-style = "light"
+family = "IosevkaTerm Nerd Font"
+style = "normal"
 
 [window]
-  opacity = 0.75
+#opacity = 1 
+opacity = 0.85

@@ -1,9 +1,18 @@
+
 # -----------------
 # Env vars
 # -----------------
+#
+ZVM_VI_ESCAPE_BINDKEY=jf
+export ANDROID_HOME=$HOME/projects/android-sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+
 export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$HOME/.local/bin:$PATH
+export XDG_CURRENT_DESKTOP="KDE"
+export XDG_SESSION_DESKTOP="KDE"
 
 export PNPM_HOME="/home/tox/.local/share/pnpm"
 case ":$PATH:" in
@@ -69,9 +78,10 @@ autoload -U +X compinit && compinit
 # -----------------
 
 zinit ice depth=1
+zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 zinit light zdharma-continuum/fast-syntax-highlighting
-zinit light zsh-users/zsh-autosuggestions
+zinit light jeffreytse/zsh-vi-mode
 
 # -----------------
 # FZF
@@ -93,6 +103,85 @@ if [[ -f "$ZDOTDIR/.aliases.zsh" ]]; then
   source "$ZDOTDIR/.aliases.zsh"
 fi
 
+my_zvm_vi_yank() {
+  zvm_vi_yank
+
+  wl-copy "${CUTBUFFER}" 
+  wl-copy -p "${CUTBUFFER}" 
+
+  notify-send "yank" "$CUTBUFFER"
+}
+
+my_zvm_vi_delete() {
+  zvm_vi_delete
+  echo -en "${CUTBUFFER}" | cbread
+}
+
+if [[ $(uname) = "Darwin" ]]; then
+  on_mac_os=0
+else
+  on_mac_os=1
+fi
+
+cbread() {
+  if [[ $on_mac_os -eq 0 ]]; then
+    pbcopy
+  else
+    wl-copy --primary
+    wl-copy 
+  fi
+}
+
+cbprint() {
+  if [[ $on_mac_os -eq 0 ]]; then
+    pbpaste
+  else
+    if   x=$(wl-paste --no-newline 2> /dev/null); then
+      echo -n $x
+    elif x=$(wl-paste --no-newline --primary 2> /dev/null); then
+      echo -n $x
+    fi
+  fi
+}
+
+my_zvm_vi_change() {
+  zvm_vi_change
+  echo -en "${CUTBUFFER}" | cbread
+}
+
+my_zvm_vi_change_eol() {
+  zvm_vi_change_eol
+  echo -en "${CUTBUFFER}" | cbread
+}
+
+my_zvm_vi_put_after() {
+  CUTBUFFER=$(cbprint)
+  zvm_vi_put_after
+  zvm_highlight clear
+}
+
+my_zvm_vi_put_before() {
+  CUTBUFFER=$(cbprint)
+  zvm_vi_put_before
+  zvm_highlight clear
+}
+
+zvm_after_lazy_keybindings() {
+  zvm_define_widget my_zvm_vi_yank
+  zvm_define_widget my_zvm_vi_delete
+  zvm_define_widget my_zvm_vi_change
+  zvm_define_widget my_zvm_vi_change_eol
+  zvm_define_widget my_zvm_vi_put_after
+  zvm_define_widget my_zvm_vi_put_before
+
+  zvm_bindkey visual 'y' my_zvm_vi_yank
+  zvm_bindkey visual 'd' my_zvm_vi_delete
+  zvm_bindkey visual 'x' my_zvm_vi_delete
+  zvm_bindkey vicmd  'C' my_zvm_vi_change_eol
+  zvm_bindkey visual 'c' my_zvm_vi_change
+  zvm_bindkey vicmd  'p' my_zvm_vi_put_after
+  zvm_bindkey vicmd  'P' my_zvm_vi_put_before
+}
 
 # -----------------
 # Propmt
