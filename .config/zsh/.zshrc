@@ -86,6 +86,7 @@ if [[ -f "$ZDOTDIR/.aliases.zsh" ]]; then
   source "$ZDOTDIR/.aliases.zsh"
 fi
 
+
 my_zvm_vi_yank() {
   zvm_vi_yank
 
@@ -100,30 +101,16 @@ my_zvm_vi_delete() {
   echo -en "${CUTBUFFER}" | cbread
 }
 
-if [[ $(uname) = "Darwin" ]]; then
-  on_mac_os=0
-else
-  on_mac_os=1
-fi
-
 cbread() {
-  if [[ $on_mac_os -eq 0 ]]; then
-    pbcopy
-  else
-    wl-copy --primary
-    wl-copy 
-  fi
+  wl-copy --primary
+  wl-copy 
 }
 
 cbprint() {
-  if [[ $on_mac_os -eq 0 ]]; then
-    pbpaste
-  else
-    if   x=$(wl-paste --no-newline 2> /dev/null); then
-      echo -n $x
-    elif x=$(wl-paste --no-newline --primary 2> /dev/null); then
-      echo -n $x
-    fi
+  if   x=$(wl-paste --no-newline 2> /dev/null); then
+    echo -n $x
+  elif x=$(wl-paste --no-newline --primary 2> /dev/null); then
+    echo -n $x
   fi
 }
 
@@ -169,4 +156,5 @@ zvm_after_lazy_keybindings() {
 # -----------------
 # Propmt
 # -----------------
+#PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 eval "$(starship init zsh)"
