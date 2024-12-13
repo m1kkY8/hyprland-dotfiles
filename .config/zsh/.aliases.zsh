@@ -38,9 +38,10 @@ alias reboot='sudo reboot now'
 alias grep='grep --color=auto'
 alias ip='ip --color'
 alias myip='curl ifconfig.me'
-alias svim='sudo vim'
+alias svim='sudo nvim'
 alias top='btop'
 alias zed='zeditor'
+alias thm='sudo openvpn ~/docs/m1kkY8.ovpn'
 
 # ---------------------------
 # Git 
@@ -72,7 +73,8 @@ alias gpp='g++'
 alias p='python3'
 alias lzd='lazydocker'
 alias lg='lazygit'
-
+alias gor='go run'
+alias gob='go build'
 
 # ---------------------------
 # Misc

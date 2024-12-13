@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-# make .local/bin directory for this file or put it where you see fit
-
 if [[ $# -eq 1 ]]; then
   selected=$1
 else
-  selected=$(find ~/dotfiles ~/notes ~/skola ~/projects ~/repos -mindepth 1 -maxdepth 1 -type d | fzf --reverse --cycle --info=inline-right)
+  selected=$(find ~/dotfiles ~/notes ~/pentest ~/skola ~/projects ~/repos -mindepth 1 -maxdepth 1 -type d | fzf --reverse --cycle --info=inline-right)
 fi
 
 if [[ -z $selected ]]; then

@@ -1,4 +1,4 @@
-#files: 843	version: 5.9
+#files: 848	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -242,6 +242,7 @@ _comps=(
 'declare' '_typeset'
 '-default-' '_default'
 'delta' '_sccs'
+'deno' '_deno.zsh'
 'designate' '_openstack'
 'devtodo' '_devtodo'
 'df' '_df'
@@ -269,6 +270,7 @@ _comps=(
 'docker' '_docker'
 'domainname' '_yp'
 'dos2unix' '_dos2unix'
+'dotnet' '_dotnet'
 'drill' '_drill'
 'dropbox' '_dropbox'
 'dropdb' '_postgresql'
@@ -644,6 +646,7 @@ _comps=(
 'jdb' '_java'
 'jobs' '_jobs_builtin'
 'joe' '_joe'
+'john' '_john'
 'join' '_join'
 'journalctl' '_journalctl'
 'jq' '_jq'
@@ -1032,6 +1035,7 @@ _comps=(
 'pwait' '_pids'
 'pwdx' '_pids'
 'pwgen' '_pwgen'
+'pwn' '_pwn'
 'pyhtmlizer' '_twisted'
 'qdbus' '_qdbus'
 'qiv' '_qiv'
@@ -1530,6 +1534,7 @@ _comps=(
 'ypxfr' '_yp'
 'ytalk' '_other_accounts'
 'yt-dlp' '_yt-dlp'
+'z' '__zoxide_z_complete'
 'zargs' '_zargs'
 'zathura' '_zathura'
 'zcalc' '_zcalc'
@@ -1663,6 +1668,7 @@ _compautos=(
 '_call_program' '+X'
 )
 
+zle -C __fzf_extract_command .complete-word __fzf_extract_command
 zle -C _bash_complete-word .complete-word _bash_completions
 zle -C _bash_list-choices .list-choices _bash_completions
 zle -C _complete_debug .complete-word _complete_debug
@@ -1694,16 +1700,17 @@ bindkey '^[,' _history-complete-newer
 bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
-autoload -Uz _zinit _alacritty _bat _bootctl _busctl \
-            _bwrap _cargo _checkupdates _cmus _coredumpctl \
-            _ctr _curl _docker _eza _fastfetch \
-            _fd _gh _hostnamectl _hyprctl _hyprpm \
-            _img2sixel _journalctl _kernel-install _kitty _libinput \
-            _localectl _loginctl _machinectl _mako _makoctl \
-            _mkinitcpio _mpv _networkctl _oomctl _paccache \
-            _pacdiff _paclist _paclog-pkglist _pacman _pacscripts \
-            _pacsearch _pacsort _pactree _pass _playerctl \
-            _pulseaudio _rankmirrors _resolvectl _rg _run0 \
+autoload -Uz _deno.zsh _zinit _alacritty _bat _bootctl \
+            _busctl _bwrap _cargo _checkupdates _cmus \
+            _coredumpctl _ctr _curl _docker _dotnet \
+            _eza _fastfetch _fd _gh _hostnamectl \
+            _hyprctl _hyprpm _img2sixel _john _journalctl \
+            _kernel-install _kitty _libinput _localectl _loginctl \
+            _machinectl _mako _makoctl _mkinitcpio _mpv \
+            _networkctl _oomctl _paccache _pacdiff _paclist \
+            _paclog-pkglist _pacman _pacscripts _pacsearch _pacsort \
+            _pactree _pass _pip _playerctl _pulseaudio \
+            _pwn _rankmirrors _resolvectl _rg _run0 \
             _rustup _sd_hosts_or_user_at_host _sd_machines _sd_outputmodes _sd_unit_files \
             _shtab _starship _systemctl _systemd _systemd-analyze \
             _systemd-delta _systemd-inhibit _systemd-nspawn _systemd-path _systemd-run \

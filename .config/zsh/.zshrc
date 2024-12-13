@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/tox/.config/zsh/completions:"* ]]; then export FPATH="/home/tox/.config/zsh/completions:$FPATH"; fi
 
 # -----------------
 # Env vars
@@ -158,3 +160,4 @@ zvm_after_lazy_keybindings() {
 # -----------------
 #PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 eval "$(starship init zsh)"
+. "/home/tox/.deno/env"
