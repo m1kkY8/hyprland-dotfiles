@@ -14,6 +14,7 @@ alias ff='firefox'
 # Pentest
 # ---------------------------
 alias hosts='sudo vim /etc/hosts'
+alias start_arch='sudo virsh start blackarch'
 
 # ---------------------------
 # Configs
@@ -41,7 +42,7 @@ alias myip='curl ifconfig.me'
 alias svim='sudo nvim'
 alias top='btop'
 alias zed='zeditor'
-alias thm='sudo openvpn ~/docs/m1kkY8.ovpn'
+alias thm='sudo openvpn ~/docs/vpns/m1kkY8.ovpn'
 
 # ---------------------------
 # Git 
