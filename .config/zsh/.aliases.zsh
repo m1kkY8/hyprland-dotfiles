@@ -15,6 +15,7 @@ alias ff='firefox'
 # ---------------------------
 alias hosts='sudo vim /etc/hosts'
 alias start_arch='sudo virsh start blackarch'
+alias kill_arch='sudo virsh shutdown blackarch'
 
 # ---------------------------
 # Configs
@@ -23,6 +24,7 @@ alias zshrc='nvim $ZDOTDIR/.zshrc'
 alias aliases='nvim $ZDOTDIR/.aliases.zsh'
 alias nvimrc='cd ~/.config/nvim && nvim'
 alias hyprc="cd ~/.config/hypr/ && nvim"
+alias monitors="nvim ~/.config/hypr/monitors.conf "
 alias keyrc='nvim ~/dotfiles/keys.conf'
 alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ keyboard.conf && sudo systemctl restart keyd'
 alias pdot='cd ~/dotfiles/ && bash push.sh'
@@ -86,6 +88,7 @@ kitty-reload() {
 
 alias rec='asciinema rec'
 alias nf='fastfetch'
+alias leetcode='nvim leetcode.nvim'
 
 # ---------------------------
 # Tmux
