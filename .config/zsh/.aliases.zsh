@@ -45,6 +45,7 @@ alias svim='sudo nvim'
 alias top='btop'
 alias zed='zeditor'
 alias thm='sudo openvpn ~/docs/vpns/m1kkY8.ovpn'
+alias pwnc="ssh -i ~/.ssh/pwncollege hacker@pwn.college"
 
 # ---------------------------
 # Git 
@@ -103,3 +104,32 @@ alias lsres="ls ~/.local/share/tmux/resurrect"
 alias dlsong='yt-dlp --no-write-description --no-playlist --extract-audio --add-metadata --audio-format mp3'
 alias dlalbum='yt-dlp --no-write-description --yes-playlist --extract-audio --add-metadata -q --progress --audio-format mp3'
 alias yt-best='yt-dlp -f bestaudio+bestvideo'
+
+# ---------------------------
+# functions 
+# ---------------------------
+
+sendhax () {
+  scp -i ~/.ssh/pwncollege "$1" hacker@pwn.college:/home/hacker/
+}
+
+sendarch() {
+  
+  if [[ -z "$1" ]]; then
+    return 1
+  fi
+
+  for item in "$@"; do
+    if [[ ! -e "$item" ]]; then
+      echo -e "skipping $item"
+      continue
+    fi
+
+    if [[ -d "$item" ]]; then
+      scp -r "$item" arch:/home/tox/
+    else 
+      scp  "$item" arch:/home/tox/
+    fi
+  done
+}
+
