@@ -16,3 +16,4 @@ case ":$PATH:" in
 esac
 
 EDITOR="nvim"
+BROWSER="firefox"

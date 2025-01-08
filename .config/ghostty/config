@@ -1,0 +1,21 @@
+title = ""
+
+window-decoration = false
+window-vsync = false
+window-theme = "ghostty"
+
+font-size = 18
+font-family = "IosevkaTerm NF Medium"
+
+background-opacity = 0.85
+#background = #0B0B0B
+theme = catppuccin-mocha
+
+shell-integration = zsh
+shell-integration-features = cursor, sudo
+confirm-close-surface = false
+
+keybind = ctrl+alt+h=goto_split:left
+keybind = ctrl+alt+j=goto_split:bottom
+keybind = ctrl+alt+k=goto_split:top
+keybind = ctrl+alt+l=goto_split:right
