@@ -16,6 +16,7 @@ alias ff='firefox'
 alias hosts='sudo vim /etc/hosts'
 alias start_arch='sudo virsh start blackarch'
 alias kill_arch='sudo virsh shutdown blackarch'
+alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
 
 # ---------------------------
 # Configs
@@ -131,5 +132,9 @@ sendarch() {
       scp  "$item" arch:/home/tox/
     fi
   done
+}
+
+bandit(){
+  sshpass -p $2 ssh $1@bandit.labs.overthewire.org -p 2220
 }
 
