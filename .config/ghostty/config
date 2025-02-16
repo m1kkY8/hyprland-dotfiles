@@ -7,8 +7,8 @@ window-theme = "ghostty"
 font-size = 18
 font-family = "IosevkaTerm NF Medium"
 
+background = 000000
 background-opacity = 0.85
-#background = #0B0B0B
 theme = catppuccin-mocha
 
 shell-integration = zsh

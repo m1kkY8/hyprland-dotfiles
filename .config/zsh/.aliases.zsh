@@ -8,7 +8,6 @@ alias t='touch'
 alias n='nvim '
 alias :q='exit'
 alias s='sudo su -'
-alias ff='firefox'
 
 # ---------------------------
 # Pentest
@@ -17,6 +16,8 @@ alias hosts='sudo vim /etc/hosts'
 alias start_arch='sudo virsh start blackarch'
 alias kill_arch='sudo virsh shutdown blackarch'
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
+alias vmprox="ssh -i ~/.ssh/arch -D 9050 -q -C -N tox@arch"
+alias kaliprox="ssh -i ~/.ssh/kali -D 9050 -q -C -N styx@kali -f"
 
 # ---------------------------
 # Configs
@@ -112,6 +113,26 @@ alias yt-best='yt-dlp -f bestaudio+bestvideo'
 
 sendhax () {
   scp -i ~/.ssh/pwncollege "$1" hacker@pwn.college:/home/hacker/
+}
+
+sendkali() {
+  
+  if [[ -z "$1" ]]; then
+    return 1
+  fi
+
+  for item in "$@"; do
+    if [[ ! -e "$item" ]]; then
+      echo -e "skipping $item"
+      continue
+    fi
+
+    if [[ -d "$item" ]]; then
+      scp -r "$item" kali:/home/styx/
+    else 
+      scp  "$item" kali:/home/styx/
+    fi
+  done
 }
 
 sendarch() {
