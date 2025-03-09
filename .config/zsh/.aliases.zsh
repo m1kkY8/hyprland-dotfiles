@@ -13,8 +13,10 @@ alias s='sudo su -'
 # Pentest
 # ---------------------------
 alias hosts='sudo vim /etc/hosts'
-alias start_arch='sudo virsh start blackarch'
-alias kill_arch='sudo virsh shutdown blackarch'
+
+alias startkali='sudo virsh start kali'
+alias stopkali='sudo virsh shutdown kali'
+
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
 alias vmprox="ssh -i ~/.ssh/arch -D 9050 -q -C -N tox@arch"
 alias kaliprox="ssh -i ~/.ssh/kali -D 9050 -q -C -N styx@kali -f"
@@ -46,7 +48,7 @@ alias myip='curl ifconfig.me'
 alias svim='sudo nvim'
 alias top='btop'
 alias zed='zeditor'
-alias thm='sudo openvpn ~/docs/vpns/m1kkY8.ovpn'
+alias thm='sudo openvpn ~/docs/vpns/SlobodaUsisivac.ovpn'
 alias pwnc="ssh -i ~/.ssh/pwncollege hacker@pwn.college"
 
 # ---------------------------

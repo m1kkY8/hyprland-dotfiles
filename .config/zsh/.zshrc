@@ -166,4 +166,4 @@ zvm_after_lazy_keybindings() {
 
 
 eval "$(starship init zsh)"
-. "/home/tox/.deno/env"
+#. "/home/tox/.deno/env"
