@@ -18,8 +18,11 @@ alias startkali='sudo virsh start kali'
 alias stopkali='sudo virsh shutdown kali'
 
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
+alias acadmey='sudo openvpn ~/docs/vpns/academy-regular.ovpn'
 alias vmprox="ssh -i ~/.ssh/arch -D 9050 -q -C -N tox@arch"
-alias kaliprox="ssh -i ~/.ssh/kali -D 9050 -q -C -N styx@kali -f"
+alias kaliprox="ssh -D 9050 -q -C -N styx@kali.vmware -f"
+alias startssh='sudo systemctl start sshd'
+alias stopssh='sudo systemctl stop sshd'
 
 # ---------------------------
 # Configs
@@ -64,8 +67,8 @@ alias commit="meteor"
 # Files
 # ---------------------------
 alias ls='exa -1 --icons -snew --group-directories-first'
-alias ll='exa --long --git --icons -snew --group-directories-first -lhr'
-alias la='exa --long --git --icons -snew --group-directories-first -lahr'
+alias ll='exa --long --git --icons -snew --group-directories-first -lhgr'
+alias la='exa --long --git --icons -snew --group-directories-first -lahgr'
 alias gla='la | grep'
 alias fzf='fzf --cycle'
 alias cat='bat -pp '

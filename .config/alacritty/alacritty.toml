@@ -10,10 +10,11 @@ import = ["~/.config/alacritty/flat.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 16
 
 [font.normal]
-family = "IosevkaTerm NF"
+#family = "IosevkaTerm NF"
+family = "JetBrainsMono NF"
 style = "normal"
 
 [window]

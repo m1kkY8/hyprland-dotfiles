@@ -10,7 +10,7 @@
   "vim_mode": true,
   "cursor_shape": "block",
   "ui_font_size": 22,
-  "buffer_font_size": 26,
+  "buffer_font_size": 22,
   "buffer_font_family": "IosevkaTerm Nerd Font",
   "tab_size": 2,
   "theme": {
@@ -27,5 +27,10 @@
     "after_delay": {
       "milliseconds": 1000
     }
-  }
+  },
+"languages": {
+      "Python": {
+        "language_servers": ["!pylsp", "pyright"]
+      }
+    }
 }
