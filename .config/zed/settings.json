@@ -7,6 +7,9 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
   "vim_mode": true,
   "cursor_shape": "block",
   "ui_font_size": 22,
@@ -16,7 +19,7 @@
   "theme": {
     "mode": "dark",
     "light": "Dayfox",
-    "dark": "Tokyo Night"
+    "dark": "Catppuccin Latte"
   },
   "tabs": {
     "close_position": "left",

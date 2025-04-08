@@ -34,6 +34,8 @@ alias hyprc="cd ~/.config/hypr/ && nvim"
 alias monitors="nvim ~/.config/hypr/monitors.conf "
 alias keyrc='nvim ~/dotfiles/keys.conf'
 alias rekeyd='sudo cp ~/dotfiles/keys.conf /etc/keyd/AT\ Translated\ Set\ 2\ keyboard.conf && sudo systemctl restart keyd'
+alias stop_kanata='systemctl --user stop kanata.service'
+alias start_kanata='systemctl --user start kanata.service'
 alias pdot='cd ~/dotfiles/ && bash push.sh'
 alias reload-waybar='pkill waybar && hyprctl dispatch exec waybar'
 
