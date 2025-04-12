@@ -1,0 +1,5 @@
+#! /usr/bin/env bash
+
+systemctl --user daemon-reload
+systemctl --user enable kanata.service
+systemctl --user start kanata.service
