@@ -20,7 +20,7 @@ alias stopkali='sudo virsh shutdown kali'
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
 alias acadmey='sudo openvpn ~/docs/vpns/academy-regular.ovpn'
 alias vmprox="ssh -i ~/.ssh/arch -D 9050 -q -C -N tox@arch"
-alias kaliprox="ssh -D 9050 -q -C -N styx@kali.vmware -f"
+alias kaliprox="ssh -i ~/.ssh/kali -D 9050 -q -C -N styx@kali.vmware -f"
 alias startssh='sudo systemctl start sshd'
 alias stopssh='sudo systemctl stop sshd'
 
