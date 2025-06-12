@@ -4,6 +4,10 @@ export LIBVIRT_DEFAULT_URI='qemu:///system'
 export ANDROID_HOME=$HOME/projects/android-sdk
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
+
 
 # Go
 export PATH=$PATH:$(go env GOPATH)/bin

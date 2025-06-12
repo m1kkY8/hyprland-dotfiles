@@ -1,4 +1,6 @@
 alias sex='source $ZDOTDIR/.zshrc && exec zsh'
+alias wgup="sudo wg-quick up wg0"
+alias wgdown="sudo wg-quick down wg0"
 
 # ---------------------------
 # Single Letter QoL
@@ -12,6 +14,7 @@ alias s='sudo su -'
 # ---------------------------
 # Pentest
 # ---------------------------
+alias exegol="sudo -E $(which exegol)"
 alias hosts='sudo vim /etc/hosts'
 
 alias startkali='sudo virsh start kali'
@@ -19,8 +22,8 @@ alias stopkali='sudo virsh shutdown kali'
 
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
 alias acadmey='sudo openvpn ~/docs/vpns/academy-regular.ovpn'
-alias vmprox="ssh -i ~/.ssh/arch -D 9050 -q -C -N tox@arch"
-alias kaliprox="ssh -i ~/.ssh/kali -D 9050 -q -C -N styx@kali.vmware -f"
+alias archprox="ssh -i ~/.ssh/pwn -D 9050 -q -C -N tox@pwn.local -f"
+alias kaliprox="ssh -i ~/.ssh/hetzner -D 9050 -q -C -N milan@vps.ubuntu.hetzner -f"
 alias startssh='sudo systemctl start sshd'
 alias stopssh='sudo systemctl stop sshd'
 
@@ -122,7 +125,9 @@ sendhax () {
   scp -i ~/.ssh/pwncollege "$1" hacker@pwn.college:/home/hacker/
 }
 
+
 sendkali() {
+  local destination="pwn.kali.local:/home/kali/shared"
   
   if [[ -z "$1" ]]; then
     return 1
@@ -135,9 +140,9 @@ sendkali() {
     fi
 
     if [[ -d "$item" ]]; then
-      scp -r "$item" kali:/home/styx/
+      scp -r "$item" "$destination"
     else 
-      scp  "$item" kali:/home/styx/
+      scp "$item" "$destination"
     fi
   done
 }
@@ -155,9 +160,9 @@ sendarch() {
     fi
 
     if [[ -d "$item" ]]; then
-      scp -r "$item" arch:/home/tox/
+      scp -r "$item" pwn.local:/home/tox/shared
     else 
-      scp  "$item" arch:/home/tox/
+      scp  "$item" pwn.local:/home/tox/shared
     fi
   done
 }

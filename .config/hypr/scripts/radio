@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# List of stations and their URLs
+stations=$(
+  cat <<EOF
+NIGHTRIDE|https://stream.nightride.fm/nightride.mp3
+CHILLSYNTH|https://stream.nightride.fm/chillsynth.mp3
+DATAWAVE|https://stream.nightride.fm/datawave.mp3
+SPACESYNTH|https://stream.nightride.fm/spacesynth.mp3
+DARKSYNTH|https://stream.nightride.fm/darksynth.mp3
+HORRORSYNTH|https://stream.nightride.fm/horrorsynth.mp3
+EBSM|https://stream.nightride.fm/ebsm.mp3
+ARCHIVES|https://stream.nightride.fm/archives.mp3
+Naxi|https://naxi128ssl.streaming.rs:9152/;*.mp3
+NaxiRock|https://naxidigital-rock128ssl.streaming.rs:8182/;*.mp3
+NaxiJazz|https://naxidigital-jazz128ssl.streaming.rs:8172/;*.mp3
+NaxiBoem|https://naxidigital-boem128ssl.streaming.rs:8162/;*.mp3
+NaxiCaffe|https://naxidigital-cafe128ssl.streaming.rs:8022/;*.mp3
+NaxiLounge|https://naxidigital-lounge128ssl.streaming.rs:8252/;*.mp3
+NaxiClubbing|https://naxidigital-clubbing128ssl.streaming.rs:8092/;*.mp3
+EOF
+)
+
+# Use fzf to choose station
+choice=$(echo "$stations" | cut -d'|' -f1 | fzf --prompt="🎶 Pick a Naxi station: ")
+
+# Exit if nothing selected
+[[ -z "$choice" ]] && exit 0
+
+# Get stream URL
+url=$(echo "$stations" | grep "^$choice|" | cut -d'|' -f2)
+
+# Play stream
+echo "▶️  Now playing: $choice"
+mpv "$url"

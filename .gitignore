@@ -1,3 +1,4 @@
 .config/tmux/plugins
 Screenshots
 .zcompdump
+.local/bin

@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/flat.toml"]
+import = ["~/.config/alacritty/cyber.toml"]
 
 [cursor.style]
     shape = "Block"
@@ -10,7 +10,7 @@ import = ["~/.config/alacritty/flat.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 22
 
 [font.normal]
 family = "IosevkaTerm NF"

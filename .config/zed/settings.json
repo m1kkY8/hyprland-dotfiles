@@ -7,6 +7,44 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
+  "icon_theme": "Catppuccin Latte",
+  "ssh_connections": [
+    {
+      "host": "dev.vps.ubuntu.hetzner",
+      "projects": [
+        {
+          "paths": [
+            "/home/developer"
+          ]
+        },
+        {
+          "paths": [
+            "/home/developer/production"
+          ]
+        },
+        {
+          "paths": [
+            "/home/milan"
+          ]
+        },
+        {
+          "paths": [
+            "/home/milan/mc"
+          ]
+        },
+        {
+          "paths": [
+            "/home/milan/resources"
+          ]
+        },
+        {
+          "paths": [
+            "/home/milan/sloboda"
+          ]
+        }
+      ]
+    }
+  ],
   "features": {
     "edit_prediction_provider": "zed"
   },

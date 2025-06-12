@@ -1,16 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/tox/.config/zsh/completions:"* ]]; then export FPATH="/home/tox/.config/zsh/completions:$FPATH"; fi
-
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$PATH"
-
-# -----------------
-# Env vars
-# -----------------
-#
-ZVM_VI_ESCAPE_BINDKEY=jf
-
 # -----------------
 # History
 # -----------------
@@ -164,6 +151,6 @@ zvm_after_lazy_keybindings() {
 # -----------------
 #PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
-
+eval "$(register-python-argcomplete --no-defaults exegol)"
 eval "$(starship init zsh)"
 #. "/home/tox/.deno/env"
