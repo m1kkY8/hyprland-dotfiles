@@ -22,7 +22,7 @@ alias stopkali='sudo virsh shutdown kali'
 
 alias vpn='ifconfig tun0 | grep inet | awk "{print \$2}" | head -n 1 | wl-copy'
 alias acadmey='sudo openvpn ~/docs/vpns/academy-regular.ovpn'
-alias archprox="ssh -i ~/.ssh/pwn -D 9050 -q -C -N tox@pwn.local -f"
+alias archprox="ssh -i ~/.ssh/pwn-kali -D 9050 -q -C -N kali@pwn.kali.local -f"
 alias kaliprox="ssh -i ~/.ssh/hetzner -D 9050 -q -C -N milan@vps.ubuntu.hetzner -f"
 alias startssh='sudo systemctl start sshd'
 alias stopssh='sudo systemctl stop sshd'

@@ -7,10 +7,10 @@ window-theme = "ghostty"
 font-size = 18
 font-family = "IosevkaTerm NF Medium"
 
-background = 0B0B0B
-background-opacity = 0.85
+#background = 0B0B0B
+#background-opacity = 0.85
 #theme = catppuccin-mocha
-theme = nightfox
+theme = Kanagawa Dragon
 
 shell-integration = zsh
 shell-integration-features = cursor, sudo

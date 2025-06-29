@@ -7,34 +7,35 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "icon_theme": "Catppuccin Latte",
+  "collaboration_panel": {
+    "dock": "right"
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "git_panel": {
+    "dock": "right"
+  },
+  "project_panel": {
+    "dock": "right"
+  },
   "ssh_connections": [
     {
-      "host": "dev.vps.ubuntu.hetzner",
+      "host": "slobodausisivac.rocks",
       "projects": [
         {
           "paths": [
-            "/home/developer"
+            "/home/milan/dev"
           ]
         },
         {
           "paths": [
-            "/home/developer/production"
+            "/home/milan/osi"
           ]
         },
         {
           "paths": [
-            "/home/milan"
-          ]
-        },
-        {
-          "paths": [
-            "/home/milan/mc"
-          ]
-        },
-        {
-          "paths": [
-            "/home/milan/resources"
+            "/home/milan/osi/bot"
           ]
         },
         {
@@ -45,6 +46,7 @@
       ]
     }
   ],
+  "icon_theme": "Catppuccin Latte",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -57,7 +59,7 @@
   "theme": {
     "mode": "dark",
     "light": "Dayfox",
-    "dark": "Catppuccin Latte"
+    "dark": "Duskfox"
   },
   "tabs": {
     "close_position": "left",
