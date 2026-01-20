@@ -4,13 +4,14 @@ window-decoration = false
 window-vsync = false
 window-theme = "ghostty"
 
-font-size = 18
-font-family = "IosevkaTerm NF Medium"
+font-size = 22
+font-family = "IosevkaTerm NF Light"
 
 #background = 0B0B0B
-#background-opacity = 0.85
+background-opacity = 0.85
 #theme = catppuccin-mocha
-theme = Kanagawa Dragon
+theme = Carbonfox
+#theme = SpiritBlossom4
 
 shell-integration = zsh
 shell-integration-features = cursor, sudo
@@ -20,3 +21,5 @@ keybind = ctrl+alt+h=goto_split:left
 keybind = ctrl+alt+j=goto_split:bottom
 keybind = ctrl+alt+k=goto_split:top
 keybind = ctrl+alt+l=goto_split:right
+
+

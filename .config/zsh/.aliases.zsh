@@ -1,6 +1,19 @@
+alias mntbox="sudo mount.cifs -o cache=none,uid=1000,gid=1000,cache=none,seal,user=u512571,pass='PlaviMaliGuster202%' //u512571.your-storagebox.de/backup hetzner-box"
 alias sex='source $ZDOTDIR/.zshrc && exec zsh'
 alias wgup="sudo wg-quick up wg0"
 alias wgdown="sudo wg-quick down wg0"
+alias tf="terraform"
+alias k="kubectl"
+alias kn="kubectl ns"
+alias ts="tailscale"
+alias st="sudo ss -tulnp | grep tcp"
+alias gcl="gitlab-ci-local"
+
+# ---------------------------
+# hack 
+# ---------------------------
+alias fz-list="find /usr/share/seclists -type f | fzf"
+
 
 # ---------------------------
 # Single Letter QoL
@@ -107,6 +120,7 @@ alias leetcode='nvim leetcode.nvim'
 # Tmux
 # ---------------------------
 alias tks='tmux kill-server'
+alias tns="tmux new-session -s"
 alias cleares="rm ~/.local/share/tmux/resurrect -rf" 
 alias lsres="ls ~/.local/share/tmux/resurrect" 
 
@@ -116,6 +130,8 @@ alias lsres="ls ~/.local/share/tmux/resurrect"
 alias dlsong='yt-dlp --no-write-description --no-playlist --extract-audio --add-metadata --audio-format mp3'
 alias dlalbum='yt-dlp --no-write-description --yes-playlist --extract-audio --add-metadata -q --progress --audio-format mp3'
 alias yt-best='yt-dlp -f bestaudio+bestvideo'
+
+
 
 # ---------------------------
 # functions 

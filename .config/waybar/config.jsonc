@@ -1,7 +1,7 @@
 {
     "layer": "top", 
-    "position": "top", 
-    "height": 34, 
+    "position": "bottom", 
+    "height": 20, 
     "spacing": 4,
 
     "modules-left": [
@@ -10,7 +10,7 @@
       "backlight" 
       ],
 
-    "modules-center": ["hyprland/window"],
+    "modules-center": [""],
     "modules-right": [
     "hyprland/language",
       "hyprland/submap", 
@@ -19,7 +19,6 @@
       "temperature", 
       "battery",
       "tray", 
-      "clock"
   ],
 
      "hyprland/workspaces": {
@@ -49,7 +48,7 @@
         "spacing": 0
     },
     "clock": {
-        "timezone": "Europe/Belgrade",
+        //"timezone": "Europe/Belgrade",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },

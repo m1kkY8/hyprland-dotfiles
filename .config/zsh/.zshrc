@@ -1,3 +1,4 @@
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 # -----------------
 # History
 # -----------------
@@ -149,8 +150,7 @@ zvm_after_lazy_keybindings() {
 # -----------------
 # Propmt
 # -----------------
-#PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
+PS1='%F{blue}%~ %(?.%F{green}.%F{red})%#%f '
 
-eval "$(register-python-argcomplete --no-defaults exegol)"
-eval "$(starship init zsh)"
-#. "/home/tox/.deno/env"
+
+export PATH="$PATH:$HOME/.local/bin"
