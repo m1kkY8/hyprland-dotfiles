@@ -7,9 +7,6 @@
 // custom settings, run `zed: open default settings` from the
 // command palette
 {
-  "edit_predictions": {
-    "provider": "none"
-  },
   "telemetry": {
     "metrics": false,
     "diagnostics": false
@@ -72,16 +69,13 @@
     {
       "host": "hetzner-vps-01",
       "args": [],
-      "projects": [
-        {
-          "paths": [
-            "/opt/./"
-          ]
-        }
-      ]
+      "projects": []
     }
   ],
   "icon_theme": "Material Icon Theme",
+  "features": {
+    "edit_prediction_provider": "none"
+  },
   "vim_mode": true,
   "cursor_shape": "block",
   "ui_font_size": 22,

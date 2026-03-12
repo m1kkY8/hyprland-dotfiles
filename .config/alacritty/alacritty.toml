@@ -10,7 +10,7 @@ import = ["~/.config/alacritty/cyber.toml"]
 TERM = "xterm-256color"
 
 [font]
-size = 22
+size = 12
 
 [font.normal]
 family = "IosevkaTerm NF"
